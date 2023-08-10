@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27_page_load_event.html</title>
+    <script>
+
+        /* 
+            页面加载事件
+                1. 加载外部资源(如图片,外联css和JavaScript等)加载完毕时触发的事件
+
+            注意事项: 
+                不止可以监听整个页面,也可以针对某个资源绑定load事件
+        */
+
+        // 等待页面所有资源加载完毕,就回去执行回调函数
+        window.addEventListener('load', function () {
+            const btn = document.querySelector("button")
+            btn.addEventListener('click', function () {
+                alert("It is button")
+            })
+        })
+
+
+        /*
+            DOMContentLoaded事件:
+                当初始的HTML文档被完全加载和解析完成知乎,DOMContentLoaded事件被触发,
+                而无需等待样式表,图像等完全加载
+
+                事件名: DOMContentLoaded事件
+
+                给document添加DOMContentLoaded事件
+        */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log(DOMContentLoaded)
+        })
+
+    </script>
+</head>
+
+<body>
+    <button>click</button>
+</body>
+
+</html>
