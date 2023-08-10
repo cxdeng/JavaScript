@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26_preventDefault.html</title>
+</head>
+<body>
+    <form action="http://www.google.com">
+        <button>submit</button>
+    </form>
+
+    <a href=""http://www.google.com"">Google</a>
+
+    <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', function(event) {
+            // 阻止默认行为: 阻止提交
+            event.preventDefault()
+        })
+
+        const a = document.querySelector("a")
+        a.addEventListener('click' , function(event) {
+            event.preventDefault()
+        })
+    </script>
+</body>
+</html>
