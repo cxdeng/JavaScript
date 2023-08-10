@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31_sliding_case.html</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 80px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: orange;
+            line-height: 80px;
+
+            position: fixed;
+            top: -80px;
+
+            transition: 0.5s all;
+        }
+
+        header span {
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        main>div {
+            width: 1200px;
+            height: 3000px;
+            background-color: bisque;
+
+            display: flex;
+            align-items: center;
+        }
+
+        main>div>div {
+            width: 300px;
+            height: 300px;
+            background-color: deepskyblue;          
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span>header-nav</span>
+    </header>
+
+    <main>
+        <div>
+            <div>module</div>
+        </div>
+    </main>
+
+
+    <script>
+        const skip = document.querySelector('main>div>div');
+        const header = document.querySelector('header')
+        // 页面滚动事件
+        window.addEventListener('scroll', function(){
+            // 当页面滚动到秒杀模块的时候,改变header的top值
+            // 页面被卷去的头部 >= 秒杀模块的位置 offsetTop
+            const n = document.documentElement.scrollTop
+            if(n >= skip.offsetTop){
+                header.style.top = 0
+            }else {
+                header.style.top = '-80px'
+            }
+
+            // header.style.top = n >= skip.offsetTop ? 0 : '-80px'
+        })
+    </script>
+</body>
+
+</html>

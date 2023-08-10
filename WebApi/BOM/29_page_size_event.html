@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29_page_size_event.html</title>
+</head>
+<body>
+    
+
+    <script>
+        /* 
+            resize事件:
+                浏览器窗口大小发生变化时候发生的事件
+
+            检测屏幕的宽度和高度
+                clientHeight
+                clientWidth
+
+            注意: 不包括边框
+
+        */
+        window.addEventListener('resize', function() {
+            console.log("Height",document.documentElement.clientHeight);
+            console.log("Width", document.documentElement.clientWidth);
+
+        })
+    </script>
+</body>
+</html>

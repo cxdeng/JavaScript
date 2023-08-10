@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28_scroll_event.html</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 10px solid black;
+            overflow: scroll;
+            margin: 0 auto;
+            margin-top: 500px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, enim exercitationem sed, accusamus placeat
+        fugit consectetur ipsum omnis delectus aliquid, accusantium quae reprehenderit vitae error in totam dolor non
+        amet.
+        Aspernatur repellat porro, quasi velit voluptas molestiae hic rem illum cupiditate excepturi consequatur
+        officiis aliquid animi vel delectus harum quia itaque ipsam. Culpa libero dolor amet debitis minima magnam
+        neque?
+        Ullam nam, fugiat id molestiae fugit itaque esse non suscipit eum quae quidem cupiditate hic voluptas quaerat
+        reiciendis quasi accusantium pariatur impedit voluptates dolor? Velit doloremque voluptate sequi placeat vitae?
+        Vel excepturi dicta sint cum sunt repudiandae tempora iure eaque praesentium, ullam itaque officiis eveniet,
+        perspiciatis dolorum fuga nesciunt ipsa perferendis esse? Ad culpa, laboriosam repudiandae amet optio corrupti
+        molestias.
+    </div>
+
+
+    <script>
+        /* 
+            页面滚动事件:
+                事件名: scroll
+
+                给window或document添加scroll事件
+        */
+
+        const div = document.querySelector('div')
+
+        window.addEventListener('scroll', function () {
+            // 获取html元素: document.documentElement
+            console.log(document.documentElement.scrollTop);
+            if(document.documentElement.scrollTop >= 100){
+                div.style.display = 'block'
+            }else {
+                div.style.display = 'none'
+            }
+        })
+
+        /*
+            获取位置:
+                1. scrollLeft 和 scrollTop 属性
+        */
+       
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop);
+            if(div.scrollTop >= 500){
+                div.scrollTop = 0
+            }
+        })
+    </script>
+</body>
+
+</html>

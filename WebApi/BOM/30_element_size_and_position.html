@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_element_size_and_position.html</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 100px;
+
+            position: relative;
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        /*
+            元素的尺寸: offsetWidth 和 offsetHeight
+                1. 包含元素自身设置的宽高,padding,border
+                2. 注意: 获取的是可视宽高,如果盒子是隐藏的,获取的结果是 0
+            
+            元素的位置
+                1. 获取元素距离自己定位父级元素的左,上距离
+                2. offsetLeft和offsetTop是只读属性
+            
+        */
+
+        const div = document.querySelector('div')
+        console.log("div = ", div.offsetWidth);
+        console.log("div = ", div.offsetHeight);
+        console.log("div = ", div.offsetLeft);
+        console.log("div = ", div.offsetTop);
+
+        // 检测盒子的位置, 最近一级带有定位的祖先元素
+        const p = document.querySelector('p')
+        console.log("p = ", p.offsetWidth);
+        console.log("p = ", p.offsetHeight);
+        console.log("p = ", p.offsetLeft);
+        console.log("p = ", p.offsetTop);
+
+    </script>
+</body>
+</html>
