@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24_unbind_event.html</title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <button id="btn2">click</button>
+
+    <script>
+        const btn1 = document.querySelector('#btn1')
+
+        // 传统绑定事件
+        btn1.onclick = function() {
+            alert('btn1')
+        }
+
+        // L0 事件解绑
+        btn1.onclick = null
+
+
+        const btn2 = document.querySelector('#btn2')
+
+        /* 
+            匿名函数无法解绑事件
+        */
+        // btn2.addEventListener('click', function(){
+        //     alert('btn2')
+        // })
+
+        // 具名函数
+        function fn(){
+            alert('btn2')
+        }
+
+        btn2.addEventListener('click', fn)
+
+        // L2 事件解绑
+        btn2.removeEventListener('click', fn)
+    </script>
+</body>
+</html>

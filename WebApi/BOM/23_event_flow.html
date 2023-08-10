@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>23_event_flow.html</title>
+    <style>
+        .parent {
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+
     <script>
-        
+        /* 
+            事件流指的是事件完整执行过程中的流动路径
+
+                阶段: 
+                    1. 捕获阶段
+                        从DOM的根元素开始执行对应的事件
+                    2. 冒泡阶段
+
+                true: 捕获
+                false: 冒泡 (默认)
+
+            阻止冒泡:
+                问题: 因为默认就有冒泡模式的存在，所以容易导致事件影响到父级元素
+                需求: 若想把事件就限制在当前元素内，就需要阻止事件冒泡
+                前提: 阻止事件冒泡需要拿到事件对象
+        */
+
+        document.addEventListener('click', function () {
+            console.log('document event')
+        }, false)
+
+        const parent = document.querySelector('.parent')
+        const son = document.querySelector('.son')
+
+        // 冒泡
+        parent.addEventListener('click', function () {
+            console.log('parent event')
+        }, false)
+
+
+        son.addEventListener('click', function (event) {
+            console.log('son event');
+            // 阻止事件流动传播: 包括 捕获阶段 和 冒泡阶段
+            event.stopPropagation()
+        }, false)
+
+
+
     </script>
 </body>
+
 </html>
