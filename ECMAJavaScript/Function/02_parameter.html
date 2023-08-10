@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function/02_parameter.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        function getSum(num) {
+            let sum = 0
+            for (let i = 0; i < num; i++) {
+                sum += 1
+            }
+
+            console.log(sum);
+        }
+
+        getSum(50)
+        getSum(100)
+
+        function add(num1, num2) {
+            let sum = num1 + num2
+            console.log(sum);
+        }
+
+        add(1, 2)
+        add(123, 789)
+
+        function getArrSum(arr) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+
+            console.log('sum: ', sum)
+        }
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        getArrSum(arr)
+    </script>
+</body>
+
+</html>

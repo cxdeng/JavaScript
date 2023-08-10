@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_this.html</title>
+    <style>
+        button {
+            width: 80px;
+            height: 30px;
+            background-color: skyblue;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>click</button>
+
+    <script>
+        /* 
+            环境对象: 指的是函数内部特殊的变量this,它代表当前函数运行时所处的环境
+
+            普通函数里面的this指向的是window
+
+            谁调用，this就是谁
+        */
+
+        function fn() {
+            console.log(this);
+        }
+
+        fn()
+
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // this指向button
+            console.log(this);
+            this.style.color = 'red'
+        })
+    </script>
+</body>
+
+</html>

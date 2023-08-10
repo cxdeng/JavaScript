@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_action_tab_content.html</title>
+</head>
+
+<body>
+    <div class="box">
+        I am the conten in a div label
+    </div>
+
+
+    <script>
+
+        /* 
+            innterText属性:
+                1. 将文本内容添加/更新到任意标签位置
+                2. 显示纯文本，不解析标签
+        */
+
+        // 1. 获取元素
+        const box = document.querySelector('.box')
+
+        // 2. 获取文字内容 对象.innerText 属性
+        console.log(box.innerText);
+        
+        // 3. 修改文字内容
+        box.innerText = 'I am changed by DOM'
+        console.log(box.innerText);
+
+        /* 
+            innterHTML属性:
+                1. 将文本内容添加/更新到任意标签位置
+                2. 会解析标签，多标签建议使用模板字符
+        */
+
+        box.innerHTML = '<strong>I am changed by DOM</strong>'
+
+
+    </script>
+</body>
+
+</html>

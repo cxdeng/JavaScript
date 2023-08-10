@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_style_attribute.html</title>
+    <style>
+        .first-class {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: chocolate;
+            margin: 0 auto;
+            border: 1px solid black;
+            font-size: 50px;
+            text-align: center;
+            line-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="first-class"></div>
+
+    <script>
+
+        /*
+            通过classList操作类控制css
+        */
+
+        // 获取元素
+        const div = document.querySelector('div')
+        div.innerHTML = "div"
+        // 追加一个类
+        div.classList.add('box')
+
+        // 删除一个类
+        // div.classList.remove('box')
+
+        // 切换一个类: 有就删掉，没有就加上
+        // div.classList.toggle('box')
+
+    </script>
+</body>
+
+</html>

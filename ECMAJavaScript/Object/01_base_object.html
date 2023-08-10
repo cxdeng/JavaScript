@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_base_object.html</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 声明对象
+        let Jack = {
+            name: 'Jack',
+            age: 19,
+            gender: 'Male'
+        }
+
+        console.log(Jack);
+        console.log(typeof Jack);
+
+        // 使用对象
+
+        // 查询对象
+        let name = Jack.name
+        let age = Jack.age
+        let gender = Jack.gender
+
+        console.log(name, age, gender)
+
+        console.log(Jack['age']);
+
+        // 修改对象
+        Jack.age = 21
+        console.log(Jack.age)
+
+        // 增加属性
+        Jack.hobby = ['football', 'tennis']
+        console.log(Jack);
+
+        // 删除属性
+        delete Jack.age
+        console.log(Jack);
+
+    </script>
+</body>
+
+</html>

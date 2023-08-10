@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_mouse_event.html</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+
+    <script>
+        /* 
+            事件类型:
+                1. 鼠标事件
+                    click
+                    mouseenter
+                    mouseleaver
+                2. 焦点事件
+                    focus: 获得焦点
+                    blur: 失去焦点
+                3. 键盘事件
+                    keydown
+                    keyuo
+                4. 文本事件:
+                    input
+        */
+
+        // 鼠标事件
+        const div = document.querySelector('div')
+
+        // 鼠标经过事件
+        div.addEventListener('mouseenter', function () {
+            console.log('mouseenter');
+        })
+
+        // 鼠标离开事件
+        div.addEventListener('mouseleave', function () {
+            console.log('mouseleave');
+        })
+
+    </script>
+</body>
+
+</html>

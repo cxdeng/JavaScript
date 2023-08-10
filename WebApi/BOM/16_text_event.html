@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_text_event.html</title>
+</head>
+<body>
+    <input type="search">
+    <script>
+         /* 
+            事件类型:
+                1. 鼠标事件
+                    click
+                    mouseenter
+                    mouseleaver
+                2. 焦点事件
+                    focus: 获得焦点
+                    blur: 失去焦点
+                3. 键盘事件
+                    keydown
+                    keyuo
+                4. 文本事件:
+                    input
+        */       
+
+        // 文本事件
+        const input = document.querySelector('input')
+        input.addEventListener('input', function () {
+            console.log(input.value);
+        })
+    </script>
+</body>
+</html>

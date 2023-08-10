@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_event_object_case.html</title>
+    <style>
+        .container {
+            width: 500px;
+            /* background-color: orange; */
+            height: 50px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+
+        img {
+            width: 20px;
+            vertical-align: bottom;
+            border-radius: 50px;
+
+            transition: transform 0.3s ease;
+            /* 添加过渡效果，让放大动作更平滑 */
+        }
+
+        button {
+            background-color: skyblue;
+            width: 70px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+
+            /* 添加过渡效果，让放大动作更平滑 */
+            transition: transform 0.3s ease;
+        }
+
+        /* 当鼠标经过容器时应用的样式 */
+        button:hover {
+            transform: scale(1.1);
+            /* 将容器放大到原来的1.2倍 */
+        }
+
+        img:hover {
+            /* 将容器放大到原来的1.2倍 */
+            transform: scale(1.3);
+        }
+
+        input:hover {
+            /* 将容器放大到原来的1.2倍 */
+            transform: scale(1.05);
+        }
+
+        input {
+            width: 300px;
+            vertical-align: bottom;
+            margin-right: 5px;
+            margin-left: 5px;
+            border-radius: 50px;
+            border: 1px solid black;
+
+            /* 添加过渡效果，让放大动作更平滑 */
+            transition: transform 0.3s ease;
+        }
+
+        div span {
+            font-size: 10px;
+            position: absolute;
+            left: 290px;
+            opacity: 0;
+        }
+
+        .info>.name {
+            color: deeppink;
+            font-weight: bold;
+            text-shadow: 0px 0px 1px black;
+        }
+
+        .info>.comment {
+            margin: 0;
+        }
+
+        .info>.time {
+            font-size: 5px;
+            opacity: 0.5;
+        }
+
+        .info {
+            visibility: hidden;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.432);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        按下回车发布评论        
+     -->
+    <div class="container">
+        <img src="../../Images/1.jpg" alt="">
+        <input type="text" placeholder="Input something">
+        <button>publish</button>
+        <div>
+            <span>0/200字</span>
+        </div>
+
+        <div class="info">
+            <p class="name">Leslie</p>
+            <p class="comment">Hello JavaScript</p>
+            <p class="time">2004-01-01 00:00:00</p>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        const input = document.querySelector('input')
+        const span = document.querySelector('div span')
+        const info = document.querySelector('.info')
+        const comment = document.querySelector('.comment')
+        input.addEventListener('input', function () {
+            span.innerText = `${input.value.length}/200`
+        })
+
+
+        input.addEventListener('focus', function () {
+            span.style.opacity = 0.6
+            input.style.outlineColor = '#FFA500'
+        })
+
+        // 按下回车发布评论
+        input.addEventListener("keyup", function (event) {
+            if (event.key === 'Enter') {
+                // 如果用户输入的不为空就显示和打印
+                if (input.value.trim() !== '') {
+                    comment.innerHTML = input.value
+                    info.style.visibility = 'visible'
+                }
+                input.value = ''
+            }
+        })
+
+    </script>
+</body>
+
+</html>

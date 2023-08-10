@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_comparison_operator.html</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(3 > 5)
+        console.log(3 < 5)
+        console.log(3 >= 5)
+        console.log(3 <= 5)
+        console.log(3 == 5)
+        // 比较运算符有隐式转换，将'2'转换为数字2
+        console.log(2 == '2')
+        // 全等判断: 判断值和数据类型是否都一样 (推荐使用)
+        console.log(2 === '2')
+
+        // NaN不等于任何，包括它自己
+        console.log(NaN === NaN);
+        console.log(NaN == NaN);
+        console.log(NaN !== 1);
+
+        // 严格判断不全等，即值不等 类型也不等
+        console.log(2 !== '2');
+        console.log(2 != '2');
+
+        // 根据ASCII比较
+        console.log('a' < 'b');
+        console.log('aa' < 'ab');
+
+        // 小数因为精度问题，因此参与运算一般会先转换成整数
+    </script>
+</body>
+</html>

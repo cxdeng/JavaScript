@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_form attribute.html</title>
+</head>
+<body>
+    <input type="text" value="computer"><br>
+
+    <input id="pwd" type="password" value="123456"><br>
+
+    <input id="chbox" type="checkbox"><br>
+
+    <button>submit</button><br>
+
+    <script>
+        // 获取元素
+        const inputVal = document.querySelector('input')
+        // 获取表单里面的值，使用value属性，不能使用innerHTML
+        console.log(inputVal.value);
+
+        // 获取元素
+        const pwdCVal = document.querySelector('#pwd')
+        // 获取表单里面的值，使用value属性，不能使用innerHTML
+        console.log(pwdCVal.value);
+        console.log(pwdCVal.type);
+
+        pwdCVal.type = 'text'
+        console.log(pwdCVal.type);
+
+
+        // 获取元素
+        const checkbox = document.querySelector('#chbox')
+        console.log(checkbox.checked);
+
+        checkbox.checked = true
+        console.log(checkbox.checked);
+
+
+        // 获取button元素
+        const button = document.querySelector('button')
+        console.log(button.disabled);
+        // 默认false，(默认不禁用)
+        button.disabled = true
+        console.log(button.disabled);
+
+
+    </script>
+</body>
+</html>

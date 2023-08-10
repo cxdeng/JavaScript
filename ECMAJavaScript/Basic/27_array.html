@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr1 = [1, 2, 3, "str", true, false]
+        let arr2 = new Array(1, 2, 3, "str", true, false)
+
+        // 修改数组
+        arr1[0] = 999
+
+        console.log(arr1)
+
+        // 新增元素到数组末尾, push()并返回数组长度
+        let newLength = arr2.push(999, 998, 997)
+        console.log(arr2, newLength)
+
+        // 新增元素到数组头部, push()并返回数组长度
+        newLength = arr2.unshift('头部1', '头部2')
+        console.log(arr2, newLength)
+
+
+        // 案例
+        let arr = [2, 0, 6, 1, 77, 0, 52, 25, 7]
+        let newArr = []
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 10) {
+                newArr.push(arr[i])
+            }
+        }
+
+        console.log(newArr);
+
+        // 删除数组最后一个元素，并返回该元素的值: pop()
+        let delArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let delArrLength = delArr.pop()
+        console.log(delArr)
+        console.log(delArrLength)
+
+        // 删除数组第一个元素，并返回该元素的值: shift()
+        delArrLength = delArr.shift()
+        console.log(delArr, delArrLength)
+
+        // splice(start, deleteCount): 删除指定元素,并返回被删除的元素数组
+        delArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let deletedArr = delArr.splice(3, 3)
+        console.log(delArr)
+        console.log(deletedArr);
+    </script>
+</body>
+
+</html>

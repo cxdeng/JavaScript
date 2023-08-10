@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.head_first_JS.html</title>
+    <style>
+        .orange {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <button class="orange">btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+
+    <script>
+        let bts = document.querySelectorAll('button')
+        for(let i = 0; i < bts.length; i++){
+            bts[i].addEventListener('click', function(){
+                document.querySelector('.orange').className = ''
+                this.className = 'orange'
+            })
+        }
+    </script>
+</body>
+</html>

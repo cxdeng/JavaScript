@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_style_attribute.html</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+
+    <script>
+        /* 
+            通过style属性操作css
+        */
+
+        // 获取元素
+        const box = document.querySelector('.box')
+        // 修改样式属性
+        box.style.width = '500px'
+        box.style.height = '500px'
+        // 多组单词采用驼峰命名法
+        box.style.backgroundColor = 'chocolate'
+        box.style.border = '5px solid black'
+        box.style.borderTop = '10px dotted purple'
+
+    </script>
+</body>
+
+</html>

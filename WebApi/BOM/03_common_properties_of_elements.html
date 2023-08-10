@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_common_properties_of_elements.html</title>
+    <style>
+        img {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="../../Images/1.jpg" onclick="changePicture()" alt="">
+
+    <script>
+
+        function changePicture() {
+            // 获取图片元素
+            const img = document.querySelector('img')
+
+            // 修改图片对象属性
+            img.src = '../../Images/2.jpg'
+            img.title = '张国荣'
+        }
+
+
+
+    </script>
+</body>
+
+</html>

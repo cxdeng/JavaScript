@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_keyboard_event.html</title>
+</head>
+<body>
+    
+    <input type="text">
+    <script>
+         /* 
+            事件类型:
+                1. 鼠标事件
+                    click
+                    mouseenter
+                    mouseleaver
+                2. 焦点事件
+                    focus: 获得焦点
+                    blur: 失去焦点
+                3. 键盘事件
+                    keydown
+                    keyuo
+                4. 文本事件:
+                    input
+        */       
+
+        const input = document.querySelector('input')
+        input.addEventListener('keydown', function () {
+            console.log('keydown');
+        })
+
+        input.addEventListener('keyup', function () {
+            console.log('keyup');
+        })
+    </script>
+</body>
+</html>

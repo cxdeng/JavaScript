@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_focus_event.htmlent</title>
+</head>
+
+<body>
+
+    <input type="text" placeholder="something">
+
+
+    <script>
+        /* 
+            事件类型:
+                1. 鼠标事件
+                    click
+                    mouseenter
+                    mouseleaver
+                2. 焦点事件
+                    focus: 获得焦点
+                    blur: 失去焦点
+                3. 键盘事件
+                    keydown
+                    keyuo
+                4. 文本事件:
+                    input
+        */
+
+        // 获得焦点
+        const input = document.querySelector('input')
+        input.addEventListener('focus', function () {
+            console.log('focus');
+            input.style.outline = 'none'
+            input.style.borderColor = 'gold'
+        })
+
+        // 失去焦点
+        input.addEventListener('blur', function () {
+            console.log('blur');
+            input.style.borderColor = 'red'
+        })
+
+    </script>
+</body>
+
+</html>

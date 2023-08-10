@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0_intermittent_function_case.html</title>
+    <style>
+        .btn {
+            width: 200px;
+            height: 30px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 10px;
+
+        }
+
+        textarea {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <textarea cols="30" rows="10"></textarea>
+
+        <button class="btn" disabled>我已经阅读用户协议(5s)</button>
+    </div>
+
+    <script>
+        const textarea = document.querySelector('textarea')
+        textarea.innerText = '协议内容'
+        textarea.style.fontSize = '30px'
+        textarea.style.textAlign = 'center'
+
+        textarea.readOnly = true
+
+
+        // 获取按钮元素
+        const btn = document.querySelector('.btn')
+        // 倒计时
+        let i = 5
+        // 开启定时器
+        let n = setInterval(function () {
+            i--
+            btn.innerHTML = `我已经阅读用户协议(${i}s)`
+
+            // 关闭定时器
+            if (i === 0) {
+                clearInterval(n)
+                btn.disabled = false
+                btn.innerHTML = '同意'
+                btn.style.backgroundColor = 'orange'
+            }
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_if.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            三大流程控制语句
+                1. 顺序结构
+                2. 分支结构
+                3. 循环结构
+        */
+
+        // 单分支语句
+        if (true) {
+            console.log('It is true');
+        }
+
+        if (false) {
+            console.log('It is false');
+        }
+
+        // 除了0所有数字都为真
+        if (-2) {
+            console.log('It is a number');
+        }
+
+        // c除了''空字符串，所有字符串都为真
+        if ("It is string")
+            console.log('Condition is a string');
+
+
+        let num = 2
+        if (num > 5) {
+            console.log('num > 5');
+        } else {
+            console.log('num < 5');
+        }
+
+
+        /* 
+            多分支语句
+        */
+        let score = 80
+        if (score >= 90) {
+            console.log("Execlent");
+        } else if (score >= 80) {
+            console.log('Good');
+        } else if (score >= 60) {
+            console.log('Fine');
+        } else {
+            console.log('Fail');
+        }
+    </script>
+</body>
+
+</html>

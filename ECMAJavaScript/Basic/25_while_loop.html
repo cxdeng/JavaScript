@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25_while_loop.html</title>
+</head>
+
+<body>
+
+    <script>
+        let num = 0
+
+        while (num < 10) {
+            document.write(num++ + '<br>')
+        }
+
+        document.write('<hr>')
+
+        while (num > 0) {
+            document.write(num-- + '<br>')
+        }
+
+        document.write('<hr>')
+
+        let i = 0
+        num = 10
+        while (i++ < num) {
+            if(i === 5){
+                continue
+            }
+            document.write(i + '<br>')
+        }
+    </script>
+</body>
+
+</html>

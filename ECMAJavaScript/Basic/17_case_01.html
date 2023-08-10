@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_case_01.html</title>
+    <style>
+        table,
+        td,
+        th {
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 30px;
+            padding: 10px 20px;
+            height: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        let price = parseFloat(prompt('input price'))
+        let num = parseInt(prompt('input num'))
+        let addr = prompt('input addr')
+
+        let total = price * num
+
+        // 模板字符串支持跨行
+        document.write(`
+            <table>
+                <caption>订单确认</caption>
+                    <thead>
+                        <tr>
+                            <th>商品名称</th>
+                            <th>商品价格</th>
+                            <th>商品数量</th>
+                            <th>总价</th>
+                            <th>收货地址</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>名称1</td>
+                            <td>${price} pounds</td>
+                            <td>${num}</td>
+                            <td>${total}</td>
+                            <td>${addr}</td>
+                        </tr>
+                    </tbody>
+            </table>
+        `)
+
+    </script>
+</body>
+
+</html>

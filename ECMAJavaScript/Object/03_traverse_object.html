@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_traverse_object.html</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /* 遍历对象 */
+
+        let object = {
+            name: 'Jack',
+            age: 19,
+            gender: 'Male'
+        }
+
+        for (let key in object) {
+            // 打印对象的属性名
+            console.log(key)
+        }
+
+        for (let key in object) {
+            // 打印对象的属性值
+            console.log(object[key])
+        }
+
+    </script>
+</body>
+
+</html>

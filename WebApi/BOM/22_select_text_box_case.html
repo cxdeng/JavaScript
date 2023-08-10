@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_select_text_box_case.html</title>
+    <style>
+        .outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 1000px;
+        }
+
+        table {
+            width: 500px;
+            height: 200px;
+            border: 1px solid black;
+            border-collapse: collapse;
+
+
+        }
+
+        table th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table thead tr th {
+            color: white;
+            background-color: deepskyblue;
+            font-weight: bold;
+        }
+
+        td:first-child {
+            width: 60px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <table>
+            <caption>商品信息</caption>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="merchant" id="checkAll">全选</th>
+                    <th>商品</th>
+                    <th>商家</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="merchant" class="ck"></td>
+                    <td>小米手机</td>
+                    <td>小米</td>
+                    <td>1999</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="merchant" class="ck"></td>
+                    <td>小米净水器</td>
+                    <td>小米</td>
+                    <td>4999</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="merchant" class="ck"></td>
+                    <td>小米电视</td>
+                    <td>小米</td>
+                    <td>5999</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        // 获取大复选框
+        const checkAll = document.querySelector('#checkAll');
+        // 获取所有小复选框
+        const cks = document.querySelectorAll('.ck')
+
+        // 点击大复选框
+        checkAll.addEventListener('click', function () {
+            for (let i = 0; i < cks.length; i++) {
+                cks[i].checked = this.checked
+            }
+        })
+
+        for (let i = 0; i < cks.length; i++) {
+            cks[i].addEventListener('click', function () {
+                // let checkedNum = document.querySelectorAll('.ck:checked').length
+                // if(checkedNum === cks.length){
+                //     checkAll.checked = true
+                // }else {
+                //     checkAll.checked = false
+                // }
+
+                checkAll.checked = document.querySelectorAll('.ck:checked').length === cks.length
+            })
+        }
+    </script>
+</body>
+
+</html>

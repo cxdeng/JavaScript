@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_function.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            对象中的方法
+        */
+
+        let person = {
+            name: 'Jack',
+
+            // 方法
+            sing: function () {
+                console.log('sing')
+            },
+
+            print: function (x, y) {
+                console.log(`It is ${x} and ${y}`)
+            }
+        }
+
+        // 方法的调用： 对象名.方法名
+        person.sing()
+        person.print(3, 4)
+    </script>
+</body>
+
+</html>

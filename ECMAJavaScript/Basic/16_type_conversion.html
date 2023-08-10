@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_type_conversion.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        let num = '20'
+
+
+        /*  
+            隐式转换
+               1. + 两边只要有一个是字符串，都会把另外一个转成字符串
+               2. 除了 + 之外的运算符，比如- * / 都会把数据转换为数字类型
+        */
+
+        // 转为字符串: 1num
+        console.log(1 + 'num');
+        // 转换为数字类型: 19
+        console.log(num - 1);
+        // 转换为数字型
+        console.log(+'123');
+
+        /*
+            显示转换
+        */
+        let str = '321'
+        // 强制转换为数字类型
+        console.log(Number(str));
+
+        // 只保留整数,不保留小数
+        console.log(parseInt('12.34px'));
+        //
+        console.log(parseFloat('12.34px'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_intermittent_function.html</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        /* 
+            开启定时器: 
+                setInterval(func, intermittentTime)
+            作用:
+                每隔一段时间调用这个函数
+                间隔时间单位是毫秒
+
+            返回值: 定时器的id
+        */
+
+        let n = setInterval(function () {
+            console.log('It is time func')
+        }, 1000)
+
+        console.log(`${n} for first setInterval`);
+
+        function fn(){
+            console.log('It is dependent func');
+        }
+
+        let m = setInterval(fn, 1000)
+        console.log(`${m} for second setInterval`);
+
+
+        /* 
+            关闭定时器
+                根据定时器的id关闭定时器
+        */
+        clearInterval(n)
+
+    </script>
+</body>
+
+</html>

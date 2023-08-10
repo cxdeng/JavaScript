@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApi/BOM/11_event_listening.html</title>
+</head>
+
+<body>
+
+    <button>click</button>
+
+    <script>
+        /* 
+            事件监听 / 绑定事件 / 注册事件
+
+            elementObject.addEventListener('eventType', func)
+
+            三要素:
+                1. 事件源
+                2. 事件类型
+                3. 事件调用的函数
+        */
+
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            alert('Event listening')
+        })
+    </script>
+</body>
+
+</html>

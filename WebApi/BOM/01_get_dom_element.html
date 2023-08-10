@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_get_dom_element.html</title>
+</head>
+
+<body>
+    <div id="box1" class="box">div - box</div>
+    <div class="box"></div>
+
+    <p id="nav">p - nav</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        /* 
+            根据css选择器来获取DOM元素
+        */
+
+        // 获取匹配的第一个元素
+        const box01 = document.querySelector('div')
+        const box02 = document.querySelector('.box')
+        console.log(box01);
+        console.log(box02);
+
+        const p01 = document.querySelector('#nav')
+        console.log(p01);
+
+        const li = document.querySelector('ul li:first-child')
+        console.log(li);
+
+        li.style.color = 'red'
+
+        //  获取匹配的多个元素，返回一个伪数组
+        const allLi = document.querySelectorAll('ul li')
+        console.log(allLi);
+
+        // 遍历
+        for (let i = 0; i < allLi.length; i++) {
+            console.log(allLi[i]);
+        }
+
+
+        /* 
+            其他方式
+        */
+
+        // 根据id获取一个元素
+        const boxById = document.getElementById('box1')
+        console.log(boxById);
+
+        // 根据标签获取一类元素
+        const liByLabel = document.getElementsByTagName('li')
+        console.log(liByLabel);
+
+        // 根据类名获取元素
+        const boxByClassName = document.getElementsByClassName('box')
+        console.log(boxByClassName);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_style_attribute.html</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: chocolate;
+            margin: 0 auto;
+            border: 1px solid black;
+            font-size: 50px;
+            text-align: center;
+            line-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+    <script>
+
+        /*
+            通过类名操作css
+        */
+
+        // 获取元素
+        const div = document.querySelector('div')
+        div.innerHTML = "div"
+        // 为元素添加类名: 新值换旧值
+        div.className = 'box'
+
+    </script>
+</body>
+
+</html>

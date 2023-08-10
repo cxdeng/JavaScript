@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_base_function.html</title>
+</head>
+
+<body>
+    <script>
+
+        /*  
+            函数命名规范:
+                1. 和变量名基本一致
+                2. 尽量小驼峰式命名法
+                3. 前缀应该为动词 
+
+            注意事项:
+                1. 两个想通的函数后面的会覆盖前面的函数
+                2. 实参个数和形参个数可以不一致
+                    1. 如果形参过多，会自动天上undifined
+                    2. 如果实参过多，那么多余的实参会被忽略
+                3. 函数一旦碰到return就不会再往下执行
+
+            作用域: 
+                1. 全局作用域
+                2. 局部作用域: 作用域函数内的代码环境，也被称为函数作用域
+
+            根据作用域不同，变量可以分为全局变量和局部变量
+
+            注意事项:
+                1. 如果函数内部，变量没有声明，直接赋值，则当作全局变量，但是不推荐
+                2. 形参属于函数的局部变量
+            
+        */
+
+        // 1. 声明函数
+        function sayHi() {
+            console.log("Hello, JavaScript")
+        }
+
+        // 2. 函数的调用
+        sayHi()
+
+        for(let i = 0; i < 3; i++){
+            sayHi()
+        }
+    </script>
+</body>
+
+</html>

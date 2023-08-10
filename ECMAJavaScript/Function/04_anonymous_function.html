@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_anonymous_function.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* 
+            匿名函数:
+                1. 函数表达式
+                    将匿名函数赋值给一个变量，并且通过变量名进行调用，这个称之为函数表达式
+                2. 立即执行函数
+
+            注意事项:
+                具名函数可以在任何位置调用
+                函数表达式，必须先声明表达式再使用
+        */
+
+        // 函数表达式
+        let v_fn = function () {
+            console.log('It is a expression of function')
+        }
+
+        // // 通过变量调用函数
+        v_fn();
+
+
+        // 立即执行函数: 不需要调用，立即执行
+        (function () {
+            let num = 10
+            console.log(num)
+        })();
+
+        (function () {
+            let num = 20
+            console.log(num)
+        })();
+
+        (function (x, y) {
+            let num = x + y
+            console.log(num)
+        }(1, 2));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_custom_attributes.html</title>
+</head>
+
+<body>
+
+    <div data-id="1" data-id2="2" data-id3="3">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+
+
+    <script>
+        /* 
+            自定义属性:
+                1. 在标签上一律以 data- 开头
+                2. 在DOM对象上一律以dataset对象方式获取
+        */
+        const one = document.querySelector('div')
+        // 获取自定义属性的值
+        console.log(one.dataset.id);
+        console.log(one.dataset.id2);
+        console.log(one.dataset.id3);
+    </script>
+</body>
+
+</html>
