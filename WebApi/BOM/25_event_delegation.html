@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25_event_delegation.html</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+
+            justify-content: space-evenly;
+
+        }
+
+        li {
+            width: 50px;
+            height: 30px;
+            margin: 10px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: orange;
+
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <p>p</p>
+    </ul>
+
+    <script>
+        /* 
+            事件委托
+                利用事件流的特征解决一些开发需求(冒泡)
+            
+                给父元素注册事件,当触发子元素的时候,会冒泡到父元素身上,从而触发父元素的事件
+        */
+
+        // 按照事件委托的方式,委托给父级,事件写到父级身上
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click', function(event){
+            if(event.target.tagName === 'LI'){
+                event.target.style.backgroundColor = 'red'
+            }
+        })
+    </script>
+</body>
+
+</html>
