@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34_date_case.html</title>
+    <style>
+        div {
+            width: 300px;
+            height: 40px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 40px;
+
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <script>
+        const div1 = document.querySelector('#div1')
+        function getMyDate() {
+            const date = new Date()
+            let year = date.getFullYear()
+            let month = date.getMonth()
+            let day = date.getDate()
+            let hours = date.getHours()
+            let mins = date.getMinutes()
+            let sec = date.getSeconds()
+
+            hours = hours < 10 ? '0' + hours : hours
+            mins = mins < 10 ? '0' + mins : mins
+            sec = sec < 10 ? '0' + sec : sec
+
+            div1.innerHTML = `Now ${hours}:${mins}:${sec} ${day}/${month}/${year}`
+        }
+
+        getMyDate()
+        setInterval(getMyDate, 1000)
+
+
+        // 方法 2
+        const date = new Date()
+        const div2 = document.querySelector('#div2')
+        // 2023/8/11 01:16:01
+        div2.innerHTML = date.toLocaleString()
+    </script>
+</body>
+
+</html>
