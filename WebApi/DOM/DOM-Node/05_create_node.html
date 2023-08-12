@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>05_create_node.html</title>
 </head>
+
 <body>
-    
+
+    <ul>
+        <li>First li tag</li>
+    </ul>
+
     <script>
         // 创建节点
         const div = document.createElement('div')
@@ -16,7 +22,22 @@
         div.style.backgroundColor = "orange"
 
         // 插入结点到某个元素的最后
-        document.body.append(div)
+        document.body.appendChild(div)
+
+
+        // 案例 2 
+        const ul = document.querySelector('ul')
+        const li = document.createElement('li')
+        li.innerHTML = "It is 'li' tag"
+        ul.appendChild(li)
+
+        // 案例 3 
+        // 插入结点到某个子元素的前面
+        const li2 = document.createElement('li')
+        li2.innerHTML = "Before the first element"
+        ul.insertBefore(li2, ul.children[0])
+
     </script>
 </body>
+
 </html>
