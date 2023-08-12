@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_BOM_object.html</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        /* 
+            BOM是浏览器对象模型
+
+            window：
+                1. navigator
+                2. location
+                3. document
+                3. history
+                4. screen
+
+            1. window对象是一个全局对象，也是JS中的顶级对象
+            2. 所有通过var定义在全局作用域中的变量以及函数都会变成window对象的属性和方法
+            3. window对象下的属性和方法调用的时候可以省略window
+        */
+
+        console.log(document === window.document);
+
+        function fn(){
+
+        }
+
+        console.log(fn === window.fn);
+
+        var num = 10
+        console.log(num === window.num);
+    </script>
+</body>
+
+</html>
