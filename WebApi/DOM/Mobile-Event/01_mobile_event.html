@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo01_mobile_event.html</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    
+    <script>
+        /* 
+            移动端事件
+
+            1. touchstart: 手指触摸到一个DOM元素时触发
+            2. touchmove: 手指在一个DOM元素上滑动时触发
+            3. touchend：手指在一个DOM元素上移开时触发
+        */
+       
+        const div = document.querySelector('div')
+        div.addEventListener('touchstart', function() {
+            console.log('touchstart event');
+        })
+
+        div.addEventListener('touchmove', function(){
+            console.log('touchmove event');
+        })
+
+        div.addEventListener('touchend', function(){
+            console.log('touchend event');
+        })
+    </script>
+</body>
+</html>
