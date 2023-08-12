@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_delete_node.html</title>
+</head>
+<body>
+    
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+    <script>
+        /* 
+            删除节点
+                1. 若js原生DOM操作中，要删除元素必须通过父元素删除
+                2. 如果父子关系不存在，则删除失败
+        */
+
+        const ul = document.querySelector('ul')
+        ul.removeChild(ul.children[1])
+    </script>
+</body>
+</html>
