@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35_timestamp.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            时间戳:
+                是指1970年1月1日0时0分0秒起至现在的毫秒数,是一种特殊的计量时间的方式
+        */
+
+        // 方式 1
+        const date = new Date()
+        const timeStamp01 = date.getTime()
+        console.log(timeStamp01);
+
+        // 方式 2 
+        const timeStamp02 = +new Date()
+        console.log(timeStamp02);
+
+        // 方式 3
+        const timeStamp03 = Date.now()
+        console.log(timeStamp03);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_search_child_node.html</title>
+</head>
+<body>
+    <ul class="parent">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+
+    <script>
+        const parent = document.querySelector('.parent')
+        // 得到伪数组
+        console.log(parent.children);
+
+
+        /* 
+            兄弟关系查找
+                1. 下一个兄弟节点: nextElementSibling属性
+                2. 上一个兄弟结点: previousElementSibling属性
+        */
+        const li2 = document.querySelector("ul li:nth-child(2)")
+        li2.innerHTML = "This li2"
+        li2.previousElementSibling.innerHTML = "li2.previousElementSibling"
+        li2.nextElementSibling.innerHTML = "li2.nextElementSibling"
+    </script>
+</body>
+</html>

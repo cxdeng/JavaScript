@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_search_parent_node_case.html</title>
+    <style>
+        .parent {
+            width: 500px;
+            height: 500px;
+            background-color: beige;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .child {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+
+    <script>
+        const child = document.querySelector(".child")
+        child.addEventListener("click", function() {
+            const parent = this.parentNode
+            console.log(parent);
+            parent.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

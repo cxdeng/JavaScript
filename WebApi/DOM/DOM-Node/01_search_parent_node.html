@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_search_parent_node.html</title>
+</head>
+
+    <div class="ancestor">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+<body>
+
+    <script>
+        /* 
+            查找结点
+            
+            父节点查找:
+                1. parentNode属性
+                2. 查找最近一级的父节点,找不到返回null
+        */
+
+        const child = document.querySelector(".child")
+        console.log(child);
+        console.log(child.parentNode);
+        console.log(child.parentNode.parentNode);
+
+    </script>
+</body>
+
+</html>
