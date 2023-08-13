@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_store_complex_data_types.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            存储复杂数据类型
+        */
+        const obj = {
+            name: "Jack",
+            age: 21,
+            gender: 'Male'
+        }
+
+        // localStorage.setItem('obj', obj)
+        localStorage.setItem('obj', JSON.stringify(obj))
+        
+        // 取数据
+        // json对象: 属性和值有引号，而引号统一都双引号
+        const jsonObj = localStorage.getItem('obj')
+        console.log(jsonObj);
+        console.log(typeof localStorage.getItem('obj'));
+
+        // 将JSON字符串转为对象
+        const fetchedObj = JSON.parse(jsonObj)
+        console.log(fetchedObj);
+
+    </script>
+</body>
+</html>

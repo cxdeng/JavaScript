@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_localStorage.html</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            本地存储 localStorage
+                本次存储只能存储字符串类型
+        */
+        // 存数据
+        localStorage.setItem("name", "Jack")
+
+        // 取数据
+        console.log(localStorage.getItem('name'));
+
+        // 修改本地存储
+        localStorage.setItem("name", "Tom")
+
+        localStorage.setItem("age", 18)
+
+        // 删除本地存储
+        localStorage.removeItem('name')
+        localStorage.removeItem('age')
+
+
+    </script>
+</body>
+
+</html>
