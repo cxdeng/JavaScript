@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28_map.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            数组中的map方法
+                1. map可以遍历数组处理数据，并返回新的数组
+                2. map有返回值
+        */
+        const arr = ['red', 'blue', 'green']
+        const newArr = arr.map(function (element, index) {
+            // 数组元素
+            console.log(element);
+            // 数组索引
+            console.log(index);
+            return element + " color"
+        })
+
+        console.log(newArr);
+    </script>
+</body>
+
+</html>
