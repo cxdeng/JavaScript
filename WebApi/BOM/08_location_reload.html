@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_reload.html</title>
+</head>
+
+<body>
+    <button>reload</button>
+    <script>
+        /* 
+            reload方法用来刷新当前页面，传入参数true使表示强制刷新
+        */
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            // f5 刷新页面
+            // location.reload()
+            // ctrl f5
+            location.reload(true)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_location_href_case.html</title>
+    <style>
+        a,a:link,a:visited,a:hover,a:active,a:focus {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="">click to redirect after 5 seconds</a>
+    </div>
+
+    <script>
+
+        const a = document.querySelector('div>a')
+        let num = 5
+        let timeId = setInterval(function(){
+            num--
+            a.innerHTML = `click to redirect after ${num} seconds`
+            if(num === 0){
+                clearInterval(timeId)
+                location.href = 'https://www.google.com'
+            }
+        }, 1000)
+    </script>
+</body>
+</html>
