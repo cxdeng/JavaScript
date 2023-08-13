@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_history.html</title>
+</head>
+<body>
+    <button id="back">back</button>
+    <button id="forward">forward</button>
+
+    <script>
+
+        const back = document.querySelector("#back")
+        const forward = document.querySelector("#forward")
+
+        back.addEventListener('click', function(){
+            // 后退
+            history.back()
+            // history.go(-1)
+        })
+
+        forward.addEventListener('click', function(){
+            // 前进
+            history.forward()
+            // history.go(1)
+        })
+    </script>
+</body>
+</html>
