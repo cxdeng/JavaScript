@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_constructure.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            构造函数
+                是一种特殊的函数，主要用来初始化对象
+            
+            1. 命名以大写字母开头
+            2. 用 new 关键字
+            3. 构造函数内部不需要写return，返回值即为新创建的对象
+        */
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        const p1 = new Person('Jack', 19)
+        console.log(p1);
+        const p2 = new Person('Tom', 20)
+        console.log(p2);
+    </script>
+</body>
+
+</html>
