@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_spread_operator.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            展开运算符
+                ... 将一个数组进行展开
+
+            不会修改原数组
+        */
+
+        const arr = [1, 5, 3, 8, 2]
+        console.log(...arr);
+
+        function func(a, b, c) {
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        const array = [1, 2, 3]
+        func(...array)
+
+        // 合并数组
+        const a = [2,3,4]
+        const b = [5,6,7]
+        const c = [...a, ...b]
+        console.log(c);
+    </script>
+</body>
+
+</html>
