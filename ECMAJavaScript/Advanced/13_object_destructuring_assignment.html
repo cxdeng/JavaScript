@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_object_destructuring_assignment.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            对象的解构赋值
+                对象属性的值将被赋值给与属性名相同的变量，否则为undefined
+        */
+
+        const obj1 = {
+            name: "Jack",
+            age: 18
+        }
+
+        const { name, age } = obj1
+        console.log(name, age);
+
+
+        // 改名的写法   旧变量名: 新变量名
+        const { name: username, age: userAge } = obj1
+        console.log(username, userAge);
+
+
+        // 数组对象的解构赋值
+        const objArr = [
+            {
+                name: "Lily",
+                age: 18
+            },
+            {
+                name: "Oliver",
+                age: 20
+            }
+        ]
+
+        const [{name: nm, age: ag}, {name: nm1, age: ag1}] = objArr
+        console.log(nm);
+        console.log(ag);
+        console.log(nm1);
+        console.log(ag1);
+    </script>
+</body>
+
+</html>

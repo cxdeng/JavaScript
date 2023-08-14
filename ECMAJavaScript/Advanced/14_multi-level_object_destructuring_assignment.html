@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_multi-level_object_destructuring_assignment.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            多级对象解构赋值
+        */
+
+        const person = [
+            {
+                name: 'Jack',
+                family: {
+                    father: "Jack's father",
+                    mother: "Jack's mother"
+                },
+                age: 20
+            }
+        ]
+
+        // const [{name, family: {father, mother}, age }] = person
+        // console.log(name, father, mother, age)
+
+        const [{name, family, age }] = person
+        console.log(name, family, age)
+
+    </script>
+</body>
+</html>
