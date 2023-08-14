@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_arrow_fun_parameter.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            普通函数有动态参数，箭头函数没有动态参数，但是有剩余参数 ...args
+        */
+
+        const getSum = (...args) => {
+            let sum = 0
+            for (let i = 0; i < args.length; i++) {
+                sum += args[i]
+            }
+            return sum
+        }
+
+        console.log(getSum(2, 3));
+        console.log(getSum(2, 3, 4));
+    </script>
+</body>
+
+</html>

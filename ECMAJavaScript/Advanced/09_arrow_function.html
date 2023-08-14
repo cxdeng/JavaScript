@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_arrow_function.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            引入箭头函数的目的是更简短的函数写法，并且不绑定this
+            箭头函数更适用于哪些本来需要匿名函数的地方
+
+            属于表达式函数
+        */
+
+        const fn1 = () => {
+            console.log('arrow function');
+        }
+        fn1()
+
+
+        const fn2 = (x) => {
+            console.log(x);
+        }
+        fn2(1)
+
+
+        // 只有一个参数的时候可以省略括号
+        const fn3 = x => console.log(x);
+        fn3(2)
+
+
+        const fn4 = x => {
+            return x + x
+        }
+        console.log(fn4(3));
+
+
+        // 省略return
+        const fn5 = x => x + x
+        console.log(fn5(4));
+
+
+        // 箭头函数可以直接返回一个对象: 加括号的函数体返回对象字面量表达式
+        const fn6 = (name) => ({ name: name }) // {name: 'Jack'}
+        console.log(fn6('Jack'));
+    </script>
+</body>
+
+</html>

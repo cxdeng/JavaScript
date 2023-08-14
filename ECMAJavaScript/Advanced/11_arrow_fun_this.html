@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_arrow_fun_this.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* 
+            以前this的指向: this指向调用者
+        */
+        console.log(this);
+
+        // 普通函数
+        function fn1() {
+            console.log(this);
+        }
+        fn1()
+
+        const obj1 = {
+            name: "Jack",
+            age: 19,
+            fn: function () {
+                console.log(this);
+            }
+        }
+        // this 指向 obj
+        obj1.fn()
+
+
+        /* 
+            箭头函数不会创建自己的this，它只会从自己的作用域链的上一层沿用this
+        */
+
+        // 指向 window
+        const fn2 = () => {
+            console.log(this);
+        }
+        fn2()
+
+
+        const obj2 = {
+            name: "Jack",
+            age: 19,
+            fn: () => {
+                console.log(this);
+            }
+        }
+        // this 指向 window
+        obj2.fn()
+
+
+        const obj3 = {
+            name: "Jack",
+            age: 19,
+            fn: function()  {
+                const count =()=>{
+                    console.log(this);
+                }
+                count()
+            }
+        }
+        // this 指向obj
+        obj3.fn()
+    </script>
+</body>
+
+</html>
