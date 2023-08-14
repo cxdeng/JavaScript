@@ -45,9 +45,10 @@
         */
         // 静态属性
         Person.gender = "Male"
+        Person.hobby = ['football', 'baseball']
         // 静态方法
         Person.printInfo = function () {
-            console.log('print info', this.gender);
+            console.log('print info', this.gender, this.hobby);
         }
         Person.printInfo()
 
