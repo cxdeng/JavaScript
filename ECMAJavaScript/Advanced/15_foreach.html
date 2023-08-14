@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_foreach.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            foreach()方法用于调用数组的每个元素，并将元素传递给回调函数
+            应用场景: 遍历数组的每个元素
+        */
+
+        const arr = ['red', 'blue', 'green']
+        arr.forEach(function (item, index) {
+            console.log(index, item)
+        })
+
+        arr.forEach(element => {
+            console.log(element);
+        });
+    </script>
+</body>
+
+</html>
