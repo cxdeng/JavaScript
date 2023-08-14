@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_garbage_collection.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            垃圾回收机制
+            生命周期:
+                1. 内存分配: 当声明变量，函数，对象的时候，系统会自动分配内存
+                2. 内存使用: 读写内存，也就是使用变量，函数等
+                3. 内存回收: 使用完毕，由垃圾回收器自动回收不再使用的内存
+
+            1. 全局变量一般不会回收(关闭页面时候回收)
+            2. 一般情况下局部变量的值，不用了，会被自动回收
+
+            内存泄漏
+
+
+            垃圾回收算法:
+                1. 引用计数法
+                    问题: 嵌套引用(循环引用)导致垃圾回收器不会进行回收，从而引起内存泄漏
+                2. 标记清除法
+        */
+    </script>
+</body>
+</html>
