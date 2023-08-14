@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_arr_destructuring_assignment.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            数组的解构赋值
+                左侧批量声明变量，右侧数组的单元值将被赋值给左侧变量
+        */
+
+        const [max, min, avg] = [100, 60, 80]
+        console.log(max);
+        console.log(min);
+        console.log(avg);
+
+        const arr = [1, 2, 3]
+        const [a, b, c] = arr
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        // 交换变量
+        let x = 1
+        let y = 2; // 需要加分号
+        [y, x] = [x, y]
+        console.log(x, y);
+
+
+        // 变量多，单元值少，undefined
+        const [d, e, f, g] = [1, 2, 3]
+        console.log(d); // 11
+        console.log(e); // 2
+        console.log(f); // 3
+        console.log(g); // undefined
+
+        // 变量少，单元值多, 多出的单元值可以使用剩余参数接收
+        const [h, i, ...j] = [1, 2, 3, 4, 5]
+        console.log(h); // 1
+        console.log(i); // 2
+        console.log(j); // [3, 4, 5]
+
+        // 按需导入，忽略某些值
+        const [k, l, , m] = [1, 2, 3, 4]
+        console.log(k); // 1
+        console.log(l); // 2
+        console.log(m); // 4
+
+        // 支持多维数组
+        const mulArr = [1, 2, [3, 4]]
+        // console.log(mulArr[0]);
+        // console.log(mulArr[1]);
+        // console.log(mulArr[2]);
+
+        const [n, o, [p, q]] = mulArr
+        console.log(n);
+        console.log(o);
+        console.log(p);
+        console.log(q);
+    </script>
+</body>
+
+</html>
