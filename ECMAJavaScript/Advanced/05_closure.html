@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_closure.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            闭包: 一个函数对周围状态的引用捆绑在一起，内层函数中访问到其外层函数的作用域
+            闭包 = 内层函数 + 外层函数的变量
+
+            作用: 
+                封闭数据，提供操作
+                外部也可以访问函数内部的变量
+
+            应用: 实现数据的私有
+
+            闭包可能会引起内存泄漏
+        */
+
+        function outer1() {
+            const a = 1
+
+            function inner() {
+                console.log(a);
+            }
+
+            inner()
+        }
+        outer1()
+
+        // 常见闭包的形式
+        function outer2() {
+            let a = 10
+            function fn() {
+                console.log(a);
+            }
+            return fn
+        }
+
+        // outer2() === fn === function fn(){}
+        // const fun = function fn(){}
+        const fun = outer2()
+
+        fun()
+
+        // 应用: 实现数据的私有化
+        function count() {
+            let i = 0
+            function fn() {
+                i++
+                console.log(i);
+            }
+
+            return fn
+        }
+        const f = count()
+        f()
+
+    </script>
+</body>
+
+</html>
