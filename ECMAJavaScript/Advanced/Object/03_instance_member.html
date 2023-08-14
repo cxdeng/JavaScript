@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_instance_member.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            实例成员:
+                通过构造函数创建的对象成为实例对象，
+                实例对象中的属性和方法成为实例成员(实例属性和实例方法)
+        */
+
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        const p1 = new Person('Jack', 19)
+        const p2 = new Person('Tom', 20)
+
+        p1.fuc = (name, age) => {
+            // 无法通过this使用成员遍历
+            // console.log(this.age)
+            // console.log(this.name)
+
+            console.log(name, age)
+        }
+        p1.fuc("Jaack", 19)
+
+        p2.fun = function () {
+            console.log(this.name, this.age)
+        }
+        p2.fun()
+
+        /* 
+            直接在构造函数伸缩增加属性，属于静态成员
+            1. 静态成员只能在构造函数来访问
+            2. 静态方法中的this指向构造函函数
+        */
+        // 静态属性
+        Person.gender = "Male"
+        // 静态方法
+        Person.printInfo = function () {
+            console.log('print info', this.gender);
+        }
+        Person.printInfo()
+
+        Person.printInfo2 = () => {
+            console.log('print info2');
+        }
+        Person.printInfo2()
+
+        console.log(p1);
+        console.log(p2);
+    </script>
+</body>
+
+</html>
