@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_function_parameter.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            动态参数
+                arguments是伪数组
+
+            剩余参数
+                允许将一个不定数量的参数表示为一个数组
+        */
+
+        // 动态参数 arguments 只存在于函数里面
+        function sum() {
+            let sum = 0
+            console.log(arguments);
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+            return sum
+        }
+
+        console.log(sum(1, 2));
+        console.log(sum(1, 2, 3, 4));
+
+
+        // 剩余参数 ...arr
+        function getSum(...arr) {
+            console.log(arr);
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            return sum
+        }
+
+        console.log(getSum(1, 2));
+        console.log(getSum(1, 2, 3));
+    </script>
+</body>
+
+</html>
