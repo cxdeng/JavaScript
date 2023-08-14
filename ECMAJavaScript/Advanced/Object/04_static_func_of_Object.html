@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_static_func_of_Object.html</title>
+</head>
+<body>
+    <script>
+        /* 
+            Object是内置的构造函数,用于创建普通对象
+
+            常用的静态方法
+                1. Object.keys: 返回key的数组
+                2. Object.values: 返回value的数组
+                3. Object.assign：对象拷贝
+        */
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+        const p1 = new Person('Jack', 19)
+        const p1Arr = Object.keys(p1)
+        console.log(p1Arr);
+        const p1Val = Object.values(p1)
+        console.log(p1Val);
+
+        // 对象拷贝
+        const p2 = new Person()
+        console.log(p2);
+        Object.assign(p2, p1)
+        console.log(p2);
+
+        // 追加属性
+        Object.assign(p2, {gender: "Male", hobby:["football", "baseball"]})
+        console.log(p2);
+
+
+    </script>
+</body>
+</html>
