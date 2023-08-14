@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31_metacharacter_boundary_character.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* 
+            元字符 / 特殊字符
+                1. 边界符: 
+                2. 量词:
+                3. 字符类
+            
+            1. 边界符；
+                ^: 表示匹配行首的文本 (以谁开始)
+                $: 表示匹配行尾的文本 (以谁结束)
+        */
+
+        console.log(/World/.test('Hello, World.')); // true
+
+        // ^: 表示匹配行首的文本 (以谁开始)
+        console.log(/^Hello/.test('Hello, World.')); // true
+        console.log(/^World./.test('Hello, World.')); // false
+
+        // $: 表示匹配行尾的文本 (以谁结束)
+        console.log(/Hello$/.test('Hello, World.')); // false
+        console.log(/World.$/.test('Hello, World.')); // true
+
+    </script>
+</body>
+
+</html>

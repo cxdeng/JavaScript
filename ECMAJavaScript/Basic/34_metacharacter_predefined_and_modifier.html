@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34_metacharacter_predefined.html</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* 
+            预定义: 指的是某些常见模式的简写方式
+            1. \d
+            2. \D
+            3. \w
+            4. \W
+            5. \s
+            6. \S
+
+            举例: 
+                日期格式:
+                    ^\d{4}-\d{1,2}-\d{1,2}
+        */
+
+        /* 
+            修饰符: 约束正则的执行的某些细节行为，如是否区分大小写，是否支持多行匹配
+
+            i: i是ignore的缩写，正则匹配时不区分大小写
+            g: g是global的缩写，匹配所有毛南族正则表达式的结果
+
+        */
+        console.log(/java/.test('JAVA'));
+        console.log(/java/i.test('JAVA'));
+
+        /* 
+             修饰符"
+                 replace: 替换
+        */
+
+        let str = 'Java is program language. JAVA is program language'
+        // 只替换一处
+        let newStr = str.replace(/java/i, 'JavaScript')
+        console.log(newStr);
+
+        // 只替换一处
+        newStr = str.replace(/java/ig, 'JavaScript')
+        console.log(newStr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_regular_expression.html</title>
+</head>
+<body>
+    
+    <script>
+        const str = 'JavaScript, ES6, FontEnd, FontEnd'
+
+        /* 
+            正则表达式
+        */
+
+        // 定义规则
+        let reg = /ES6/
+        // 匹配
+        console.log(reg.test(str));
+
+        reg = /React/
+        console.log(reg.test(str));
+
+        reg = /FontEnd/
+        // 返回的是数组
+        console.log(reg.exec(str));
+
+    </script>
+</body>
+</html>

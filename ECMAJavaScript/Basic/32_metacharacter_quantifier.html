@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32_metacharacter_quantifier.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            正则表达式
+
+            量词: 设定某个模式出现的次数
+            1. *: 重复零次或多次
+            2. +: 重复一次或多次
+            3. ?: 重复零次或一次
+            4. {n}: 重复 n 次
+            5. {n,}: 重复 n 次或多次
+            6. {n,m}: 重复 n 到 m 次
+        */
+
+        // 1. *: 重复零次或多次
+        console.log(/^H*/.test('')); // true
+        console.log(/^H*/.test('Hello, World.')); // true
+        console.log(/^H*/.test('HHHello, World.')); // true
+
+        // 2. +: 重复一次或多次
+        console.log(/^H+/.test('')); // flase
+        console.log(/^H+/.test('HHHello, World.')); // true
+
+        // 3. ?: 重复零次或一次
+        console.log(/^H?/.test('')); // true
+        console.log(/^H?/.test('Hello, World.')); // true
+        console.log(/^H?/.test('HHHello, World.')); // true
+
+        // 4. {n}: 重复 n 次
+        console.log(/^He{0}/.test('')); // flase
+        console.log(/^He{1}/.test('')); // false
+        console.log(/^He{0}/.test('Hello, World.')); // true
+        console.log(/^He{1}/.test('Hello, World.')); // true
+        console.log(/^He{0}/.test('HeHeHello, World.')); // true
+        console.log(/^He{1}/.test('HeHeHello, World.')); // true
+
+        // 5. {n,}: 重复 n 次或多次
+
+        // 6. {n,m}: 重复 n 到 m 次
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33_metacharacter_character.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            字符类
+                只要包含中括号内任意一个字符都返回true
+        */
+
+        console.log(/[abc]/.test('a'));
+        console.log(/[abc]/.test('b'));
+        console.log(/[abc]/.test('c'));
+
+        console.log(/[abc]/.test('ab'));
+        console.log(/[abc]/.test('ac'));
+        console.log(/[abc]/.test('bc'));
+
+        console.log(/[abc]/.test('abc'));
+
+        console.log(/^[abc]{2}$/.test('a')); // false
+        console.log(/^[abc]{2}$/.test('ab')); // true
+        console.log(/^[abc]{2}$/.test('abc')); // true
+
+        console.log(/[a-z]/.test("a")); // true
+        console.log(/[a-z]/.test("A")); // false
+        console.log(/[a-zA-Z]/.test("A")); // true
+        console.log(/[0-9]/.test("1")); // true
+        console.log(/[a-zA-Z0-9]/.test("aA1")); // true
+
+        /* 
+            []里面加上^是取反符号
+            比如 [^a-z]是匹配除了小写字母以外的字符
+        */
+
+        console.log(/[^a-z]/.test('a')); // false
+
+        /* 
+            . 匹配除了换行符之外的任何单个字符
+        */
+    </script>
+</body>
+</html>
