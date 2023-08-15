@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_extend_methods_for_arrays.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            为数组扩展方法
+            自定义的方法写到　prototype　上
+        */
+        const arr = new Array(1, 2, 3)
+        console.log(arr);
+        Array.prototype.max = function() {
+            return Math.max(...this)
+        }
+
+        console.log(arr.max());
+
+        Array.prototype.min = function() {
+            return Math.min(...this)
+        }
+
+        console.log(arr.min());
+
+        Array.prototype.sum = function() {
+            let sum = 0
+            for(let i = 0; i<this.length; i++){
+                sum += this[i]
+            }
+            return sum
+        }
+        console.log(arr.sum());
+    </script>
+</body>
+
+</html>
