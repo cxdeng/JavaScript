@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_constructor_attribute.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            在 JavaScript 中，每个对象都有一个特殊的属性叫做 "constructor"（构造函数）。
+            这个属性指向创建该对象的构造函数。当使用一个构造函数创建一个对象实例时，
+            JavaScript 会自动设置该对象的 "constructor" 属性。
+
+            例如，如果有一个构造函数 Person，当使用它创建一个对象实例时，
+            该对象实例的 "constructor" 属性会指向 Person 构造函数本身。
+
+            作用: 该属性指向原型对象的构造函数，就是指向父类
+        */
+
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        const p1 = new Person('Jack', 19)
+        console.log(p1);
+        console.log(Person.prototype);
+        console.log(Person.prototype.constructor);
+
+        console.log('---------------------------------');
+
+        // 覆盖了原有的 prototype，需要重新指回创造这个原型对象的构造函数
+        Person.prototype = {
+            constructor: Person,
+            
+            speak: function(){
+                console.log("speak func");
+            },
+
+            eat: function(){
+                console.log("eat func");
+            }
+        }
+        console.log(p1);
+        console.log(Person);
+        console.log(Person.prototype);
+        console.log(Person.prototype.constructor);
+    </script>
+</body>
+</html>
