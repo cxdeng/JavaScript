@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_common_func_of_Array_2.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            some()函数的用法
+            用于检查数组中是否存在至少一个元素满足指定的条件。
+            它会遍历数组中的每个元素，并返回一个布尔值，
+            表示是否至少有一个元素满足条件。
+        */
+        let numbers = [2, 4, 6, 8, 10, 11];
+
+        const hasOdd = numbers.some((num) => {
+            return num % 2 !== 0;
+        });
+
+        console.log(hasOdd); // 输出 true，因为数组中存在奇数（11）
+
+
+        /* 
+            concat()函数的用法
+            用于将多个数组或值合并成一个新数组。
+            它不会修改原始数组，而是返回一个新的数组，其中包含了所有合并的数组元素。
+
+        */
+        let array1 = [1, 2, 3];
+        let array2 = [4, 5, 6];
+        let mergedArray = array1.concat(array2);
+        console.log(mergedArray); // 输出 [1, 2, 3, 4, 5, 6]
+
+
+        array1 = [1, 2];
+        array2 = [3, 4];
+        newValue1 = 5;
+        newValue2 = 6;
+        mergedArray = array1.concat(array2, newValue1, newValue2);
+        console.log(mergedArray); // 输出 [1, 2, 3, 4, 5, 6]
+
+
+        /* 
+            sort()函数的用法
+            用于对数组元素进行排序。默认情况下，它会将数组元素转换为字符串并按照 Unicode 代码单元值进行排序。
+            也可以传递一个比较函数来指定自定义的排序规则。
+
+        */
+        let fruits = ["banana", "apple", "grape", "orange"];
+        fruits.sort();
+        console.log(fruits); // 输出 ["apple", "banana", "grape", "orange"]
+
+        numbers = [10, 2, 8, 5, 3];
+
+        /* 
+            (a, b) => a - b 会将数组 numbers 中的元素按照升序进行排序。
+            如果想要降序排序，可以将比较函数改为 b - a
+        */
+        numbers.sort((a, b) => a - b);
+        console.log(numbers); // 输出 [2, 3, 5, 8, 10]
+
+
+        /*
+            splice()方法的使用
+            用于在数组中添加或删除元素，同时可以修改原数组。
+            它可以用于删除、替换和插入元素。splice() 
+
+            array.splice(startIndex, deleteCount, item1, item2, ...);
+        */
+
+        // 删除元素
+        numbers = [1, 2, 3, 4, 5];
+        numbers.splice(2, 1); // 从索引 2 开始删除 1 个元素
+        console.log(numbers); // 输出 [1, 2, 4, 5]
+
+        // 替换元素
+        fruits = ["apple", "banana", "grape", "orange"];
+        fruits.splice(1, 1, "kiwi"); // 从索引 1 开始删除 1 个元素，并插入 "kiwi"
+        console.log(fruits); // 输出 ["apple", "kiwi", "grape", "orange"]
+
+        // 删除并插入元素
+        const colors = ["red", "green", "blue", "yellow"];
+        colors.splice(1, 2, "orange", "purple"); // 从索引 1 开始删除 2 个元素，并插入 "orange" 和 "purple"
+        console.log(colors); // 输出 ["red", "orange", "purple", "yellow"]
+
+
+        /* 
+            reverse()函数的用法
+            用于颠倒数组中元素的顺序。
+            它会修改原始数组，并将数组中的元素按照相反的顺序重新排列。
+        */
+        numbers = [1, 2, 3, 4, 5];
+        numbers.reverse();
+        console.log(numbers); // 输出 [5, 4, 3, 2, 1]
+
+
+        /* 
+            findIndex()函数的用法
+            用于找到数组中满足条件的第一个元素，并返回该元素的索引。
+            如果找不到满足条件的元素，则返回 -1。
+        */
+        numbers = [5, 10, 15, 20, 25];
+        let index = numbers.findIndex((num) => {
+            return num > 15;
+        });
+
+        console.log(index); // 输出 3，因为第一个大于 15 的元素是在索引 3 处
+
+    </script>
+</body>
+
+</html>

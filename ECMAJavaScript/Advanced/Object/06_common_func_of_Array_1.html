@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_common_func_of_Array.html</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            Array的常见实例方法
+                1. forEach
+                2. filter
+                3. map
+                4. reduce: 累计器，返回累计处理结果，经常用于求和等
+                    如果有起始值，则把初始值累加到里面
+        */
+
+        // 1. 没有初始值
+        const arr = [1, 2, 3, 4]
+        let total = arr.reduce((prev, cur) => {
+            return prev + cur
+        })
+
+        console.log(total);
+
+
+        // 2. 有初始值
+        total = arr.reduce((prev, cur) => prev + cur, 10)
+        console.log(total);
+
+
+        /* 
+            filter函数的用法
+            用于过滤数组中的元素，并返回一个新数组，新数组只包含满足条件的元素。
+        */
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        const evenNumbers = numbers.filter((num) => {
+            return num % 2 === 0;
+        });
+
+        console.log(evenNumbers); // 输出 [2, 4, 6, 8, 10]
+
+
+        /* 
+            every函数的用法: 
+            用于检查数组中的所有元素是否都满足指定的条件。它会遍历数组中的每个元素，并返回一个布尔值，表示数组中的所有元素是否都满足条件。
+        */
+        numbers = [2, 4, 6, 8, 10];
+
+        const allEven = numbers.every((num) => {
+            return num % 2 === 0;
+        });
+
+        console.log(allEven); // 输出 true，因为所有元素都是偶数
+
+
+    </script>
+</body>
+
+</html>
