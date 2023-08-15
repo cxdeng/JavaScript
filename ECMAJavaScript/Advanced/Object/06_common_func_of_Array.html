@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_common_func_of_Array.html</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            Array的常见实例方法
+                1. forEach
+                2. filter
+                3. map
+                4. reduce: 累计器，返回累计处理结果，经常用于求和等
+                    如果有起始值，则把初始值累加到里面
+        */
+
+        // 1. 没有初始值
+        const arr = [1, 2, 3, 4]
+        let total = arr.reduce((prev, cur) => {
+            return prev + cur
+        })
+
+        console.log(total);
+
+
+        // 2. 有初始值
+        total = arr.reduce((prev, cur) => prev + cur, 10)
+        console.log(total);
+
+    </script>
+</body>
+
+</html>
