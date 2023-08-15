@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_prototype.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            原型对象prototype是一个属性
+
+            1. 这个对象可以挂载函数，对象实例化不会多次创建原型上的函数，节约内存
+            2. 可以把不变的方法直接定义在prototype对象上，这样所有对象的实例就可以共享这些方法
+            3. 构造函数和原型对象的this都指向实例化的对象
+
+            在 JavaScript 中，每个函数（Function）都有一个特殊的属性叫做 "prototype"（原型）。
+            这个属性是一个指向一个对象的引用，它用于实现原型继承和共享属性和方法。
+            当创建一个函数时，JavaScript 会自动为该函数创建一个与之关联的 prototype 对象。
+
+            具体来说，通过函数的 prototype 对象，可以为该函数添加属性和方法，这些属性和方法将会被该函数的所有实例所共享。
+            当你通过该函数创建新的对象实例时，这些实例会继承该函数的 prototype 对象中的属性和方法。
+        */
+        function Person(name, age){
+            this.name = name
+            this.age = age
+        }
+
+        const p1 = new Person('Jack', 19) 
+        console.dir(p1)
+        console.dir(Person.prototype)
+
+        // 原型对象里面的函数this指向实例
+        Person.prototype.speak = function(){
+            console.log('This is speak func');
+        }
+        p1.speak()
+
+    </script>
+</body>
+</html>
