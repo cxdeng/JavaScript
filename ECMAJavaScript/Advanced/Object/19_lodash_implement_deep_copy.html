@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_lodash_implement_deep_copy.html</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        /* 
+            lodash
+        */
+        const obj = {
+            name: "Jack",
+            age: 19,
+            hobby: ['football', 'baseball'],
+            innerObj: {
+                name: "Tom",
+                age: 21
+            }
+        }
+
+        const o = _.cloneDeep(obj)
+        console.log(o);
+    </script>
+</body>
+
+</html>

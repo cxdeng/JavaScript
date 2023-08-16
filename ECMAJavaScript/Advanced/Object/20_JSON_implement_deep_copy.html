@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_JSON_implement_deep_copy.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            JSON实现深拷贝
+        */
+        const obj = {
+            name: "Jack",
+            age: 19,
+            hobby: ['football', 'baseball'],
+            innerObj: {
+                name: "Tom",
+                age: 21
+            }
+        }
+
+        const o = JSON.parse(JSON.stringify(obj))
+        console.log(o);
+    </script>
+</body>
+
+</html>
