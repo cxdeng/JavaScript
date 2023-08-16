@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_recursive_implementation_of_deep_copy.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            递归函数实现深拷贝
+        */
+        const obj = {
+            name: "Jack",
+            age: 19,
+            hobby: ['football', 'baseball'],
+            innerObj: {
+                name: "Tom",
+                age: 21
+            }
+        }
+        const o = {}
+
+        // 拷贝函数
+        function deepCopy(newObj, oldObj) {
+            for (let k in oldObj) {
+                if (oldObj[k] instanceof Array) {
+                    // 处理数组的问题
+                    newObj[k] = []
+                    deepCopy(newObj[k], oldObj[k])
+                }else if(oldObj[k] instanceof Object){
+                    // 处理对象问题
+                    newObj[k] = {}
+                    deepCopy(newObj[k], oldObj[k])
+                } else {
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+        deepCopy(o, obj)
+        console.log(o);
+    </script>
+</body>
+
+</html>

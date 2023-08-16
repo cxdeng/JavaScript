@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_recursive_function.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            递归函数
+        */
+
+        let i = 0
+        function fn(){
+            if(i > 10)
+                return
+            console.log(`This is ${i++}`);  
+            fn()
+        }
+
+        fn()
+    </script>
+
+</body>
+</html>
