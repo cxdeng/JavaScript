@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_debounce.html</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: grey;
+            margin: 200px auto;
+            
+            font-size: 50px;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+    <script>
+        /* 
+            节流:
+                在 JavaScript 中，节流（Throttle）是一种常用的技术，用于限制函数在一定时间间隔内的执行次数。
+                与防抖不同，节流的目的是确保函数在连续触发的情况下，以固定的频率执行，而不是只执行最后一次触发的函数。
+
+                节流的基本原理是在一定时间间隔内只执行一次函数，无论触发事件频率多高。这可以通过使用定时器来实现。
+            
+            需求: 鼠标停止500ms之后，数字才发生变化
+        */
+        const box = document.querySelector('.box')
+        let i = 0
+        function mouseMove() {
+            box.innerHTML = i++
+        }
+
+        // box.addEventListener('mousemove', mouseMove)
+        box.addEventListener('mousemove', _.throttle(mouseMove, 500))
+
+    </script>
+</body>
+
+</html>
