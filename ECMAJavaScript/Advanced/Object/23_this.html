@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_this.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            JavaScript 中的 this 关键字指向当前执行上下文中的对象，它的值取决于函数被调用的方式以及函数的定义方式。this 的指向在不同的情况下会有不同的表现：
+
+            全局环境下：
+            当在全局环境（即不在任何函数内部）使用 this 时，它通常指向全局对象，
+            在浏览器中是 window 对象，在 Node.js 中是 global 对象。
+
+            函数内部：
+            在函数内部，this 的值取决于函数被调用的方式。
+
+            在普通函数中，this 取决于函数的调用方式。
+            如果函数是作为独立函数调用（即不作为对象的方法），则 this 指向全局对象（浏览器中是 window 对象）或严格模式下为 undefined。
+
+            在对象的方法中，this 指向调用该方法的对象。
+
+            在构造函数中，this 指向即将创建的实例对象。
+
+            箭头函数：
+            箭头函数的 this 是词法作用域中的 this，它继承自包含它的函数。
+            箭头函数没有自己的 this 绑定，所以在箭头函数内部使用的 this 将指向外层的 this。
+        
+        */
+
+        console.log(this);  // 在浏览器中，指向 window 对象
+
+        function normalFunction() {
+            console.log(this);
+        }
+
+        normalFunction();  // 在浏览器中，指向 window 对象
+
+        const obj = {
+            method() {
+                console.log(this);
+            }
+        };
+
+        obj.method();  // 指向 obj 对象
+
+        function Constructor(name) {
+            this.name = name;
+            console.log(this);
+        }
+
+        const instance = new Constructor('example');  // 指向新创建的实例对象
+
+        const arrowFunction = () => {
+            console.log(this);
+        };
+
+        arrowFunction();  // 在全局环境中，指向 window 对象（浏览器中）
+
+    </script>
+</body>
+
+</html>

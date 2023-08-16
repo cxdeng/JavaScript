@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24_change_this_call.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            改变this的指向
+
+            1. call(): 使用call方法调用函数，同时指定被调用函数中this的值 
+        */
+       const obj = {
+            name: "Jack",
+            age: 19
+       }
+
+        function fn(x, y){
+            console.log(this);
+            console.log('This is fn func', x, y);
+        }
+
+        fn.call(obj,1, 2)
+    </script>
+</body>
+</html>
