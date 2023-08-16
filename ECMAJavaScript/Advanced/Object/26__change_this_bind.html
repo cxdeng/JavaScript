@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26__change_this_bind.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            改变this的指向
+
+            3. bind(): 不会调用函数，但是能改变函数内部的指向
+        */
+
+        const obj = {
+            name: "Jack",
+            age: 19
+        }
+
+        function fn(x, y) {
+            console.log(this);
+            console.log('This is fn func');
+        }
+
+        const fnc = fn.bind(obj)
+        console.log(fnc);
+        fnc()
+    </script>
+</body>
+</html>
