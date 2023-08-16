@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_prototypal_inheritance.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            JS大多数借助原型对象实现继承的特性
+        */
+
+        function Person() {
+            this.eyes = 2
+            this.mouth = 1
+        }
+
+        function Man() {
+
+        }
+
+        function Women() {
+
+        }
+
+        // Man通过原型来继承Person
+        Man.prototype = new Person()
+        // 指回原来的构造函数
+        Man.prototype.constructor = Man
+
+        Man.prototype.func_man = function () {
+            console.log('This is func_man func');
+        }
+
+        // Man通过原型来继承Person
+        Women.prototype = new Person()
+        // 指回原来的构造函数
+        Women.prototype.constructor = Women
+
+        Women.prototype.func_women = function () {
+            console.log('This is women func');
+        }
+
+        const m1 = new Man()
+        const w1 = new Women()
+
+        console.log(m1);
+        console.log(w1);
+
+    </script>
+</body>
+
+</html>
