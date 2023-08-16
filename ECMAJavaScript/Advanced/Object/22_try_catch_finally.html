@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_try_catch_finally.html</title>
+</head>
+
+<body>
+    <p>
+        This is p label
+    </p>
+    <script>
+        /* 
+            try, catch, finally
+        */
+
+        function fn() {
+            try {
+                // debugger关键字在此处加断点
+                debugger
+                const p = document.querySelector('.p')
+                p.style.color = 'red'
+            } catch (error) {
+                console.log(error.message);
+                throw new Error(error.message)
+            }finally{
+                console.log('This is finally block');
+            }
+        }
+        fn()
+    </script>
+</body>
+
+</html>
