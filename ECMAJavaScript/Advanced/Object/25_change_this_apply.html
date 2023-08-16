@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25_change_this_apply.html</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            改变this的指向
+
+            2. apply(): 使用apply方法调用函数，同时指定被调用函数中this的值 
+                返回值是函数的返回值
+
+            apply()主要和数组有关系
+        */
+        const obj = {
+            name: "Jack",
+            age: 19
+        }
+
+        function fn(x, y) {
+            console.log(this);
+            console.log('This is fn func', x, y);
+        }
+
+        fn.apply(obj, [1, 2])
+
+        // 使用场景，求数组的最大值
+        const max = Math.max.apply(null, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        console.log(max);
+    </script>
+</body>
+
+</html>
