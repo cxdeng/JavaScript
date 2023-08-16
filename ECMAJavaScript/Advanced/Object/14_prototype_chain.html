@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_prototype_chain.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            原型链
+
+            原型链是 JavaScript 中一种用于对象属性和方法继承的机制，通过连接对象的原型对象（__proto__）来实现。
+            当访问一个对象的属性或方法时，如果该对象本身没有这个属性或方法，JavaScript 引擎会通过原型链向上查找，直到找到为止。
+
+            原型链的概念基于 JavaScript 中对象之间的原型关系，其中每个对象实例都可以通过原型链访问其原型对象的属性和方法。
+            这样的继承机制允许对象之间共享和继承属性和方法，从而实现代码的复用和模块化。
+
+            以下是原型链的基本概念和示例：
+
+            原型对象：
+
+            每个对象都有一个原型对象，它是一个普通的 JavaScript 对象。通过原型对象，对象实例可以继承属性和方法。
+            原型链：
+
+            每个对象实例都通过 __proto__ 属性（或 Object.getPrototypeOf() 方法）链接到其原型对象。这些链接形成了原型链。
+            属性和方法查找：
+
+            当你访问对象的属性或方法时，如果对象本身没有这个属性或方法，JavaScript 引擎会在原型链上查找，从当前对象的原型对象开始，然后逐级向上查找，直到找到属性或方法或者到达原型链的顶端（Object 原型）。
+        */
+
+        function Person(){
+
+        }
+        const p1 = new Person()
+        console.log(p1);
+        console.log(Person.prototype.__proto__ === Object.prototype);
+    </script>
+</body>
+</html>
