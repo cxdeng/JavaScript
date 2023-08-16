@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_shallow_copy.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            直接复制对象产生的问题，因为直接复制地址，因此，改一个对象，其他对象也会改
+
+            使用展开运算符或Object.assign()解决浅拷贝的问题
+
+            浅拷贝会在对象中嵌套对象中出现问题，因为在内层嵌套依旧拷贝地址
+            
+        */
+       const obj1 = {
+        name: 'Jack',
+        age: 19
+       }
+
+       // 浅拷贝: 拷贝的是地址
+       const obj2 = obj1
+       const obj3 = {...obj1}
+       const obj4 = {}
+       Object.assign(obj4, obj1)
+
+       console.log(obj1);
+       console.log(obj2);
+       console.log(obj3);
+       console.log(obj4);
+
+       obj2.age = 20
+
+       console.log(obj1);
+       console.log(obj2);
+       console.log(obj3);
+       console.log(obj4);
+
+    </script>
+</body>
+</html>
