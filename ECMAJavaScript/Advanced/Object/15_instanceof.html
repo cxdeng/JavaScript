@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_instanceof.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            使用instanceof运算符用于检测构造函数的prototype属性是否出现在某个实例对象的原型链上
+        */
+
+
+        function Person() {
+
+        }
+        const p1 = new Person()
+
+        console.log(p1 instanceof Person);
+        console.log(p1 instanceof Object);
+
+        console.log(p1 instanceof Array);
+        console.log([1, 2, 3] instanceof Array);
+        console.log(Array instanceof Object);
+
+    </script>
+</body>
+
+</html>
