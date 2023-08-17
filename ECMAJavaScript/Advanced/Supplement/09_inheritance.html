@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_inheritance.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            多态
+                通过extends关键字来完成继承
+        */
+
+        class Animal {
+            constructor(name) {
+                this.name = name
+            }
+
+            sayHi() {
+                console.log("Animal say Hi");
+            }
+        }
+
+        class Dog extends Animal {
+            // 重写构造函数
+            constructor(name) {
+                // 重写构造函数时，第一行代码必须为super()
+                super(name)
+            }
+
+            sayHi() {
+                console.log("Dog say Hi");
+            }
+        }
+
+        class Cat extends Animal {
+            // 重写构造函数
+            constructor(name) {
+                // 重写构造函数时，第一行代码必须为super()
+                super(name)
+            }
+
+            // sayHi() {
+            //     super.sayHi()
+            //     console.log("Cat say Hi");
+            // }
+        }
+
+        const dog = new Dog('dogg')
+        const cat = new Cat('catt')
+
+        console.log(dog);
+        console.log(cat);
+
+        // dog.sayHi()
+        // cat.sayHi()
+    </script>
+</body>
+
+</html>

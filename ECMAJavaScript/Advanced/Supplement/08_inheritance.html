@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_inheritance.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            多态
+                通过extends关键字来完成继承
+        */
+
+        class Animal{
+            constructor(name){
+                this.name = name
+            }
+
+            sayHi(){
+                console.log("Animal say Hi");
+            }
+        }
+
+        class Dog extends Animal{
+
+        }
+
+        class Cat extends Animal{
+
+        }
+
+        const dog = new Dog('dogg')
+        const cat = new Cat('catt')
+
+        console.log(dog);
+        console.log(cat);
+
+        dog.sayHi()
+        cat.sayHi()
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_use_strict_model.html</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            严格模式
+
+            JavaScript的严格模式是引入在ECMAScript 5 (ES5) 中的一个特性，
+            它使得JavaScript运行在一个不同的模式下，这个模式在许多情况下更加严格，有助于开发者避免常见的错误
+        */
+
+        "use strict";
+
+        // error
+        // a = 10 
+
+
+        console.log(this);
+
+
+        function test() {
+            console.log(this);
+        }
+
+        test(); // 输出 "undefined"
+
+
+    </script>
+</body>
+
+</html>

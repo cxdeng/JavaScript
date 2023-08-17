@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_modify_prototype.html</title>
+</head>
+
+<body>
+
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name
+            }
+
+            sayHi() {
+                console.log("Animal say Hi");
+            }
+        }
+
+        class Dog{
+            constructor(name){
+                this.name = name
+            }
+        }
+
+        const p1 = new Person("Jack")
+        const p2 = new Person("Tom")
+
+        /* 
+            通过对象修改原型，向原型中添加方法，修改后所有同类实例都能访问该方法。
+            不推荐这样做
+
+        */
+        p1.__proto__.run = ()=>{
+            console.log('This is run func');
+        }
+
+        console.log(p1);
+        p1.run()
+
+        p2.__proto__ = new Dog()
+        console.log(p2);
+
+        /* 
+            通过类的 prototype属性来访问原型
+                无需创建实例即可完成对类的修改
+        */
+
+        console.log(Person.prototype);
+        console.log(Person.prototype === p1.__proto__);
+
+        Person.prototype.eat = () => {
+            console.log('It is eat func');
+        }
+    </script>
+</body>
+
+</html>

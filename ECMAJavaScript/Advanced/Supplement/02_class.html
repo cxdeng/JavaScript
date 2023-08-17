@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_class.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+           使用Object创建创建对象的问题:
+                1. 无法区分出不同类型的对象
+                2. 不方便批量创建对象
+
+            在JS可以通过 class 来解决这个问题:
+                1. 类是对象模板，可以将对象中的属性和方法直接定义在类中
+                    定义后，可以通过类来创建对象
+                2. 通过同一个类创建的对象，称为同类对象
+                3. 如果某个对象是由某个类创建的，可以称这个对象是这个类的实例
+        */
+        const person = {
+            name: "Jack",
+            age: 19,
+
+            work() {
+                console.log(`${this.name} in work func`);
+            },
+
+            study() {
+                console.log(`${this.name} in study func`);
+            }
+        }
+
+        person.work()
+        person.study()
+
+        /* 
+            定义类:
+                1. class 类名 {}
+                2. const 类名 = class {}
+            
+            通过类创建对象:
+                new 类名()
+        */
+        class Person {
+
+        }
+        console.log(Person);
+        // 通过构造函数创建对象
+        const p1 = new Person()
+        console.log(p1 instanceof Person);
+
+    </script>
+</body>
+
+</html>

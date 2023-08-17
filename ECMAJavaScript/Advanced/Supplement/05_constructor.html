@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_constructor.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            构造函数
+        */
+
+        class Person {
+
+            /* 
+                构造函数
+                    构造函数在调用类创建对象时候执行
+            */
+            constructor(name, age){
+                console.log(`It is constructor: ${name}, ${age}`);
+                this.name = name
+                this.age = age
+            }
+
+            sayHello() {
+                console.log(`${this.name} is saying hello`);
+            }
+
+        }
+
+        const p1 = new Person('Jack', 19)
+        const p2 = new Person('Tom', 20)
+        const p3 = new Person('Jerry', 21)
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+    </script>
+</body>
+
+</html>

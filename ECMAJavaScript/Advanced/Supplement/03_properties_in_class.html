@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_properties_in_class.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            类的属性
+        */
+       class Person{
+            /* 
+                默认严格模式 "use strict"
+            */
+
+            /* 
+                Person实例的属性
+                实例属性只能通过实例访问
+            */
+            name
+            age = '19'
+
+
+            /* 
+                类属性 / 静态属性
+                静态属性只能通过类访问
+            */
+            static test1 ='static 属性1'
+            static test2 ='static 属性1'
+
+       }
+
+       const p1 = new Person()
+
+       console.log(p1);
+    </script>
+</body>
+</html>

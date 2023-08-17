@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_polymorphism.html</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            多态
+                1. 在JS中不会检查参数的类型，所以意味着任何数据都可以作为参数传递
+                2. 要调用某个函数，无需指定类型，只要对象满足某些条件即可
+        */
+
+        class Person{
+            constructor(name){
+                this.name = name
+            }
+        }
+
+        class Dog{
+            constructor(name){
+                this.name = name
+            }
+        }
+
+        const p1 = new Person("Jack")
+        const d1 = new Dog('dogg')
+        /* 
+            定义一个函数，这个函数将接受一个对象作为参数
+        */
+
+        // 多态
+       function sayHello(obj){
+            console.log(`Hello: ${obj.name}`);
+       }
+       sayHello(p1)
+       sayHello(d1)
+
+
+    </script>
+</body>
+</html>

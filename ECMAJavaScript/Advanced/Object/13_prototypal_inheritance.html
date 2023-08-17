@@ -27,6 +27,11 @@
 
         }
 
+        // 子类会通过原型链找到该方法
+        Person.prototype.func_person = function() {
+            console.log('This is func_person func');
+        }
+
         // Man通过原型来继承Person
         Man.prototype = new Person()
         // 指回原来的构造函数

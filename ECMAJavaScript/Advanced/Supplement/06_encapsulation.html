@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_encapsulation.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            封装: 
+                1. 对象就是用来存储不同属性的容器
+                2. 对象不仅负责属性，还要负责数据的安全
+                3. 直接添加到对象中的属性并不安全，因为可以被任意修改
+
+            如何确保数据安全
+                1. 私有化数据
+                2. 提供setter和getter方法
+
+            封住主要用来保护数据的安全
+            实现封装的方式:
+                1. 属性私有化: #attribute
+                2. 通过getter和setter方法
+
+        */
+        class Person {
+
+            // 实例使用 # 开头就变成了私有属性，私有属性只能在类内部访问
+            // #address = 'address 1'
+
+            // 私有属性必须先声明
+            #name
+            #age
+
+            constructor(name, age) {
+                console.log(`It is constructor: ${name}, ${age}`);
+                this.#name = name
+                this.#age = age
+            }
+
+            sayHello() {
+                console.log(`${this.name} is saying hello`);
+            }
+
+            getName(){
+                return this.#name
+            }
+
+            setName(name){
+                this.#name = name
+            }
+
+            // 推荐使用
+            get age(){
+                return this.#age
+            }
+
+            set age(age){
+                if(age >= 0 && age <= 120)
+                    this.#age = age
+                else
+                    throw new Error(`Age is invalid: ${age}`)
+            }
+
+        }
+
+        const p1 = new Person('Jack', 19)
+        console.log(p1);
+
+        p1.setName('Tom')
+        // 实际还是调用方法
+        p1.age= 21
+
+        console.log(p1.getName());
+        console.log(p1.age);
+        
+    </script>
+</body>
+
+</html>

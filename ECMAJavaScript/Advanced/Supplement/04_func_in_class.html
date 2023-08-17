@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_func_in_class.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            方法
+        */
+        class Person {
+
+            name = 'Jack'
+            age
+
+            /* 
+               这里使用了类的属性初始化语法，将一个匿名函数赋值给了 sayHi 属性。在这种情况下，sayHi 方法是一个实例方法，每个实例都会拥有一个独立的 sayHi 方法。
+               这种方式在类内部定义方法时，方法中的 this 关键字指向当前实例。 
+            */
+            sayHi = function () {
+                console.log(this.name, 'It is sayHi func');
+            }
+
+            /* 
+                这是传统的方式定义类的方法。sayHello 方法是一个实例方法，每个实例也会拥有一个独立的 sayHello 方法。
+                和上面的 sayHi 方法一样，这种方式下的方法内的 this 关键字同样指向当前实例。
+
+                sayHello方法并不会直接复制到每个实例中，而是将方法定义放在 Person 类的原型对象上。
+                这意味着所有的 Person 类实例共享同一个方法定义，而不是每个实例都有独立的拷贝。
+            */
+            sayHello() {
+                console.log(this.name, 'It is sayHello func');
+            }
+
+            /* 
+                这是一个静态方法，通过 static 关键字定义。
+                静态方法不会被实例继承，而是直接属于类本身。它不需要创建类的实例，而是可以直接通过类名调用。
+                在静态方法内部，无法访问实例的属性或方法，因为它不属于实例。
+            */
+            static staticFunc(){
+                console.log('This is a static func');
+            }
+        }
+
+        const p1 = new Person()
+        p1.sayHi()
+        p1.sayHello()
+        Person.staticFunc()
+        console.log(p1);
+
+    </script>
+</body>
+
+</html>

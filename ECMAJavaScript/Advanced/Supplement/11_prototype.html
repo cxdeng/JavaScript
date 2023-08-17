@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_prototype.html</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            通过对象原型访问原型对象
+            访问一个对象的原型对象
+                对象.__protp__
+
+            原型对象的数据:
+                1. 对象的数据
+                2. 构造函数
+            
+            原型对象中也有原型
+        */
+        class Person {
+            name = "Jack"
+
+            sayHi() {
+                console.log(`This is ${this.name}`);
+            }
+        }
+
+        const p = new Person();
+        console.log(p);
+        console.log(p.__proto__);
+        console.log(p.__proto__.constructor);
+        console.log(Object.getPrototypeOf(p));
+    </script>
+</body>
+
+</html>
